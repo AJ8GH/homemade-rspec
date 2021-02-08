@@ -2,13 +2,13 @@
 
 ## Building a homemade version of everyone's favourite Ruby testing framework:
 
-#### Defining the `expect`, `to` and `eq` matcher syntax:
+Defining the `expect`, `to` and `eq` matcher syntax:
 
 ```ruby
 expect(true).to eq(true)
 ```
 
-#### And it block method:
+And it block method:
 
 ```ruby
 it 'works!' do
@@ -16,7 +16,7 @@ it 'works!' do
 end
 ```
 
-#### Success messages for passing examples:
+Success messages for passing examples:
 
 ```Ruby
 it 'can do basic math' do
@@ -28,7 +28,7 @@ end
 Example: can do basic math passed!
 ```
 
-#### And errors for failing ones:
+And errors for failing ones:
 
 ```Ruby
 it 'bad math' do
