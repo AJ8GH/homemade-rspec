@@ -17,5 +17,5 @@ def raise_error(example)
 end
 
 def success(example)
-  puts "#{example}: Test Passed!"
+  puts "Example: #{example} passed!"
 end

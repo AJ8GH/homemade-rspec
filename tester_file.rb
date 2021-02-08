@@ -13,9 +13,9 @@ it 'can do basic math' do
 end
 
 p 'raises error - works!'
-# it 'raises error' do
-#   expect(1).to eq(3)
-# end
+it 'bad math' do
+  expect(1).to eq(3)
+end
 
 it 'works!' do
   expect('Hello World!').to eq('Hello World!')
