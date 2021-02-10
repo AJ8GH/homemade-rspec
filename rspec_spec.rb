@@ -26,7 +26,7 @@ describe 'Building RSpec' do
   end
 
   describe 'respond_to matcher' do
-    it 'does respond to with strings' do
+    it 'does respond to with arrays' do
       expect([]).to respond_to :map
     end
 
@@ -36,6 +36,16 @@ describe 'Building RSpec' do
   end
 
   describe 'be_a' do
-    expect(2).to be_a Integer
+    it 'uses be_a to determine Integer class' do
+      expect(2).to be_a Integer
+    end
+
+    it 'uses be_a to determine any class' do
+      expect({}).to be_a Hash
+    end
+
+    it 'uses be_a to determine the Class class' do
+      expect(Object).to be_a Class
+    end
   end
 end

@@ -10,6 +10,10 @@ def includes(value)
   Include.new(value)
 end
 
-def respond_to(method)
-  RespondTo.new(method)
+def respond_to(value)
+  RespondTo.new(value)
+end
+
+def be_a(value)
+  BeA.new(value)
 end

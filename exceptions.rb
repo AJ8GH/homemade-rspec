@@ -1,0 +1,2 @@
+class MySpecError < Exception
+end
