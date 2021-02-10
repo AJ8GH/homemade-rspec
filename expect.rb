@@ -1,18 +1,17 @@
-require_relative 'equal'
+class Expect
+  attr_reader :subject
 
-class Expect < Equal
-
-  def to(equal)
-    compare(equal)
+  def to(matcher)
+    compare(matcher)
   end
 
-  def not_to(equal)
-    !compare(equal)
+  def initialize(subject)
+    @subject = subject
   end
 
   private
 
-  def compare(equal)
-    self.value == equal.value
+  def compare(matcher)
+    matcher.compare?(self.subject)
   end
 end

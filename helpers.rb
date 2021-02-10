@@ -6,16 +6,10 @@ def eq(value)
   Equal.new(value)
 end
 
-def it(example)
-  result = yield
-  raise_error(example) unless result
-  success(example)
+def includes(value)
+  Include.new(value)
 end
 
-def raise_error(example)
-  raise Exception, "#{example} test failed"
-end
-
-def success(example)
-  puts "Example: #{example} passed!"
+def respond_to(method)
+  RespondTo.new(method)
 end
