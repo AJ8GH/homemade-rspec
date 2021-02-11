@@ -1,22 +1,24 @@
 require_relative 'spec_helper'
 
 describe 'Building RSpec' do
-  describe 'eq matcher' do
-    it 'states true == true' do
-      expect(true).to eq(true)
-    end
+  context 'to understand it better' do
+    describe 'eq matcher' do
+      it 'states true == true' do
+        expect(true).to eq(true)
+      end
 
-    it 'does eq with math' do
-      expect(5 + 5).to eq(10)
-    end
+      it 'works on math' do
+        expect(5 + 5).to eq(10)
+      end
 
-    it 'does eq with strings' do
-      expect('Hello World!').to eq('Hello World!')
+      it 'works on strings' do
+        expect('Hello World!').to eq('Hello World!')
+      end
     end
   end
 
   describe 'include matcher' do
-    it 'does include with strings' do
+    it 'works on strings' do
       expect('abc').to includes 'a'
     end
 
@@ -26,26 +28,40 @@ describe 'Building RSpec' do
   end
 
   describe 'respond_to matcher' do
-    it 'does respond to with arrays' do
+    it 'works on arrays' do
       expect([]).to respond_to :map
     end
 
-    it 'does respond to with symbols' do
+    it 'works on symbols' do
       expect(:hello).to respond_to :to_s
     end
   end
 
   describe 'be_a' do
-    it 'uses be_a to determine Integer class' do
-      expect(2).to be_a Integer
+    context 'when used on numerics' do
+      it 'works on Integers' do
+        expect(2).to be_a Integer
+      end
+
+      it 'works on floats' do
+        expect(0.8).to be_a Float
+      end
     end
 
-    it 'uses be_a to determine any class' do
-      expect({}).to be_a Hash
+    context 'when used on enumerables' do
+      it 'uses be_a to determine any class' do
+        expect({}).to be_a Hash
+      end
+
+      it 'works on arrays' do
+        expect([5]).to be_a Array
+      end
     end
 
-    it 'uses be_a to determine the Class class' do
-      expect(Object).to be_a Class
+    context 'when used on the Class class' do
+      it 'works :)' do
+        expect(Object).to be_a Class
+      end
     end
   end
 end
